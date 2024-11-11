@@ -17,13 +17,15 @@ if (isset($_POST["username"])) {
 
         if ($data['level'] == 'admin') {
 
-            header("location:index.php");
+            echo '<script>alert("Berhasil Masuk"); location.href="index.php"</script>"';
+
         } else if ($data['level'] == 'petugas') {
 
-            header("location:index_petugas.php");
-        } else {
-            echo '<script>alert("Username/Password Salah");</script>';
+            echo '<script>alert("Berhasil Masuk"); location.href="index_petugas.php"</script>"';
+
         }
+    } else {
+        echo '<script>alert("Username/Password Salah ");</script>';
     }
 }
 
@@ -49,7 +51,7 @@ if (isset($_POST["username"])) {
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
-                <div class="container " >
+                <div class="container ">
                     <div class="row justify-content-center">
                         <div class="col-lg-5">
                             <div class="card shadow-lg border-0 rounded-lg mt-5 bg-warning">
@@ -58,7 +60,7 @@ if (isset($_POST["username"])) {
                                 </div>
                                 <div class="card-body ">
                                     <form method="post">
-                                        <div class="form-floating mb-3" >
+                                        <div class="form-floating mb-3">
                                             <input class="form-control" id="inputEmail" type="text" name="username"
                                                 placeholder="Masukan username" />
                                             <label for="inputEmail">Username</label>
@@ -74,7 +76,8 @@ if (isset($_POST["username"])) {
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="btn btn-dark"><a href="register.php">Belum punya akun? Register!</a></div>
+                                    <div class="btn btn-dark"><a href="register.php">Belum punya akun? Register!</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
